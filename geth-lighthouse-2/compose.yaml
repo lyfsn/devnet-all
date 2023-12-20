@@ -76,10 +76,9 @@ services:
       - --metrics-address=0.0.0.0
       - --metrics-allow-origin=*
       - --metrics-port=5054
-      - --trusted-peers=${CL_TRUSTED_PEERS}
-      - --boot-nodes=${CL_BOOTNODES}
       - --enable-private-discovery=true
       - --target-peers=16
+      - --boot-nodes=${CL_BOOTNODES}
     volumes:
       - ./consensus-data:/consensus-data 
       - ./el-cl-genesis-data:/el-cl-genesis-data
