@@ -33,7 +33,7 @@ services:
       - --metrics.port=9001
       - --port=50403
       - --discovery.port=50403
-      - --bootnodes=enode://472742564d80deada0071254a392d5befd574b668825e6eb704bec8aa3f554c80b97632788b413c9a07ffa6e8249786304cd0d7a6469d303a18b5b8466b2b5b9@78.46.91.61:50303
+      - --bootnodes=${EL_BOOTNODES}
     volumes:
       - ./execution-data:/execution-data
       - ./el-cl-genesis-data:/el-cl-genesis-data
@@ -76,8 +76,8 @@ services:
       - --metrics-address=0.0.0.0
       - --metrics-allow-origin=*
       - --metrics-port=5054
-      - --trusted-peers=16Uiu2HAmVVPxfCqLc2qAczwE3qzKL6U7EZBDkbEue8BVeKAgEZ5z
-      - --boot-nodes=enr:-MS4QAfPDjx5IBZrQbOshCZleCgzsvjA0U6I6QH9t9_YUkjUPS6mPuoDi0uoHWo1e0JjZ4NSmlQOszshKqX-0hBW9K1Hh2F0dG5ldHOI__________-EZXRoMpDT1PoxQAAAOP__________gmlkgnY0gmlwhE4uWz2EcXVpY4IjKYlzZWNwMjU2azGhA_ohkLvniilyBew80ve2ZwN7If79Dx8rfWiyQ85q-_K5iHN5bmNuZXRzD4N0Y3CCIyiDdWRwgiMo
+      - --trusted-peers=${CL_TRUSTED_PEERS}
+      - --boot-nodes=${CL_BOOTNODES}
       - --enable-private-discovery=true
       - --target-peers=16
     volumes:
