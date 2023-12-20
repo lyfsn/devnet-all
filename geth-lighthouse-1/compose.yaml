@@ -4,7 +4,7 @@ services:
   execution:
     image: ethpandaops/geth:master-5b57727
     command:
-      - --networkid=38256
+      - --networkid=38356
       - --state.scheme=path
       - --verbosity=3
       - --datadir=/execution-data
