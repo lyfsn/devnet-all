@@ -33,7 +33,7 @@ services:
       - --metrics.port=9001
       - --port=50503
       - --discovery.port=50503
-      - --bootnodes=enode://323344ce07d924580169b63986fbb5ca7d13ea7ee41ac1d2a4870d03724a51c8be4f59ad0b35b679c88d621c826fc51b6e6f36e6db6f939eedd79f6f0bbfcdb0@192.168.0.102:50303?discport=50303
+      - --bootnodes=enode://472742564d80deada0071254a392d5befd574b668825e6eb704bec8aa3f554c80b97632788b413c9a07ffa6e8249786304cd0d7a6469d303a18b5b8466b2b5b9@78.46.91.61:50303
     volumes:
       - ./execution-data:/execution-data
       - ./el-cl-genesis-data:/el-cl-genesis-data
@@ -76,8 +76,8 @@ services:
       - --metrics-address=0.0.0.0
       - --metrics-allow-origin=*
       - --metrics-port=5054
-      - --trusted-peers=16Uiu2HAm3TC5jLkMLsSvHeHbxwJKEueDznHNfq88PkPEtrRy4WtN
-      - --boot-nodes=/ip4/192.168.0.102/tcp/11000/p2p/16Uiu2HAm3TC5jLkMLsSvHeHbxwJKEueDznHNfq88PkPEtrRy4WtN
+      - --trusted-peers=16Uiu2HAmVVPxfCqLc2qAczwE3qzKL6U7EZBDkbEue8BVeKAgEZ5z
+      - --boot-nodes=enr:-MS4QAfPDjx5IBZrQbOshCZleCgzsvjA0U6I6QH9t9_YUkjUPS6mPuoDi0uoHWo1e0JjZ4NSmlQOszshKqX-0hBW9K1Hh2F0dG5ldHOI__________-EZXRoMpDT1PoxQAAAOP__________gmlkgnY0gmlwhE4uWz2EcXVpY4IjKYlzZWNwMjU2azGhA_ohkLvniilyBew80ve2ZwN7If79Dx8rfWiyQ85q-_K5iHN5bmNuZXRzD4N0Y3CCIyiDdWRwgiMo
       - --enable-private-discovery=true
       - --target-peers=16
     volumes:

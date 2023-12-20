@@ -77,7 +77,7 @@ services:
       - --metrics-allow-origin=*
       - --metrics-port=5054
       - --trusted-peers=16Uiu2HAmVVPxfCqLc2qAczwE3qzKL6U7EZBDkbEue8BVeKAgEZ5z
-      - --boot-nodes=enr:-MS4QA5vf7tj7ownbPspfZqgoU005eXmt2zyumNrmwrENJWpQ4cT2GzkKry4Umh5CTEpAgBaoiEWlzcwltLRMCwsgm4Bh2F0dG5ldHOIAAAAAAAAAACEZXRoMpDT1PoxQAAAOP__________gmlkgnY0gmlwhE4uWz2EcXVpY4IjKYlzZWNwMjU2azGhA_ohkLvniilyBew80ve2ZwN7If79Dx8rfWiyQ85q-_K5iHN5bmNuZXRzAIN0Y3CCIyiDdWRwgiMo
+      - --boot-nodes=enr:-MS4QAfPDjx5IBZrQbOshCZleCgzsvjA0U6I6QH9t9_YUkjUPS6mPuoDi0uoHWo1e0JjZ4NSmlQOszshKqX-0hBW9K1Hh2F0dG5ldHOI__________-EZXRoMpDT1PoxQAAAOP__________gmlkgnY0gmlwhE4uWz2EcXVpY4IjKYlzZWNwMjU2azGhA_ohkLvniilyBew80ve2ZwN7If79Dx8rfWiyQ85q-_K5iHN5bmNuZXRzD4N0Y3CCIyiDdWRwgiMo
       - --enable-private-discovery=true
       - --target-peers=16
     volumes:
