@@ -7,3 +7,4 @@ api-token.txt
 logs
 .secp-sk
 geth
+*.sqlite-journal
