@@ -1,0 +1,33 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+      POSTGRES_DB: web3signer
+    ports:
+      - "25432:5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./postgresql:/docker-entrypoint-initdb.d
+
+  web3signer:
+    image: consensys/web3signer:develop
+    restart: always
+    command:
+      - --http-host-allowlist=*
+      - eth2
+      - --keystores-path=/validator_keys
+      - --keystores-password-file=/validator_keys/password.txt
+      - --slashing-protection-db-url=jdbc:postgresql://db:5432/web3signer
+      - --slashing-protection-db-username=postgres
+      - --slashing-protection-db-password=password
+    ports:
+      - "49000:9000"
+    depends_on:
+      - db
+    volumes:
+      - ./validator_keys:/validator_keys

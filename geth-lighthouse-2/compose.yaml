@@ -1,0 +1,123 @@
+version: "3.8"
+
+services:
+  execution:
+    image: ethpandaops/geth:master-5b57727
+    command:
+      - --networkid=38256
+      - --state.scheme=path
+      - --verbosity=3
+      - --datadir=/execution-data
+      - --http
+      - --http.addr=0.0.0.0
+      - --http.vhosts=*
+      - --http.corsdomain=*
+      - --http.api=admin,engine,net,eth,web3,debug
+      - --http.port=8545
+      - --ws
+      - --ws.addr=0.0.0.0
+      - --ws.port=8546
+      - --ws.api=admin,engine,net,eth,web3,debug
+      - --ws.origins=*
+      - --allow-insecure-unlock
+      - --nat=extip:${IP_ADDRESS}
+      - --verbosity=3
+      - --authrpc.port=8551
+      - --authrpc.addr=0.0.0.0
+      - --authrpc.vhosts=*
+      - --authrpc.jwtsecret=/el-cl-genesis-data/jwt/jwtsecret
+      - --syncmode=full
+      - --rpc.allow-unprotected-txs
+      - --metrics
+      - --metrics.addr=0.0.0.0
+      - --metrics.port=9001
+      - --port=50503
+      - --discovery.port=50503
+      - --bootnodes=enode://323344ce07d924580169b63986fbb5ca7d13ea7ee41ac1d2a4870d03724a51c8be4f59ad0b35b679c88d621c826fc51b6e6f36e6db6f939eedd79f6f0bbfcdb0@192.168.0.102:50303?discport=50303
+    volumes:
+      - ./execution-data:/execution-data
+      - ./el-cl-genesis-data:/el-cl-genesis-data
+    ports:
+      - "10745:8545" 
+      - "10746:8546" 
+      - "10751:8551" 
+      - "11201:9001" 
+      - "50503:50503/udp"
+      - "50503:50503/tcp"
+    restart: unless-stopped
+
+  beacon:
+    image: sigp/lighthouse:v4.5.0
+    user: "root"
+    command:
+      - lighthouse
+      - beacon_node
+      - --debug-level=info
+      - --datadir=/consensus-data
+      - --testnet-dir=/el-cl-genesis-data/custom_config_data
+      - --disable-enr-auto-update
+      - --enr-address=${IP_ADDRESS}
+      - --enr-udp-port=11200
+      - --enr-tcp-port=11200
+      - --listen-address=0.0.0.0
+      - --port=11200
+      - --http
+      - --http-address=0.0.0.0
+      - --http-port=4000
+      - --http-allow-sync-stalled
+      - --slots-per-restore-point=32
+      - --disable-packet-filter
+      - --execution-endpoints=http://execution:8551
+      - --jwt-secrets=/el-cl-genesis-data/jwt/jwtsecret
+      - --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776
+      - --subscribe-all-subnets
+      - --import-all-attestations
+      - --metrics
+      - --metrics-address=0.0.0.0
+      - --metrics-allow-origin=*
+      - --metrics-port=5054
+      - --trusted-peers=16Uiu2HAm3TC5jLkMLsSvHeHbxwJKEueDznHNfq88PkPEtrRy4WtN
+      - --libp2p-addresses=/ip4/192.168.0.102/tcp/11000/p2p/16Uiu2HAm3TC5jLkMLsSvHeHbxwJKEueDznHNfq88PkPEtrRy4WtN
+      - --enable-private-discovery=true
+      - --target-peers=16
+    volumes:
+      - ./consensus-data:/consensus-data 
+      - ./el-cl-genesis-data:/el-cl-genesis-data
+    ports:
+      - "11200:11200/udp"
+      - "11200:11200/tcp" 
+      - "4400:4000"
+      - "7454:5054"
+    depends_on:
+      - execution
+    restart: unless-stopped
+
+  validator:
+    image: sigp/lighthouse:v4.5.0
+    command:
+      - lighthouse
+      - validator_client
+      - --debug-level=info
+      - --testnet-dir=/el-cl-genesis-data/custom_config_data
+      - --validators-dir=/validator-keys/node-1-keystores/keys
+      - --secrets-dir=/validator-keys/node-1-keystores/secrets
+      - --init-slashing-protection
+      - --http
+      - --unencrypted-http-transport
+      - --http-address=0.0.0.0
+      - --http-port=5042
+      - --beacon-nodes=http://beacon:4000
+      - --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776
+      - --metrics
+      - --metrics-address=0.0.0.0
+      - --metrics-allow-origin=*
+      - --metrics-port=5064
+    volumes:
+      - ./el-cl-genesis-data:/el-cl-genesis-data
+      - ./validator-keys:/validator-keys
+    ports:
+      - "7242:5042"
+      - "7264:5064"
+    depends_on:
+      - beacon
+    restart: unless-stopped
