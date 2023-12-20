@@ -45,7 +45,7 @@ services:
       - --listen-address=0.0.0.0
       - --http
       - --http-address=0.0.0.0
-      - --execution-endpoints=http://127.0.0.1:8551
+      - --execution-endpoints=http://${IP_ADDRESS}:8551
       - --jwt-secrets=/el-cl-genesis-data/jwt/jwtsecret
       - --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776
       - --subscribe-all-subnets
@@ -74,6 +74,7 @@ services:
       - --http
       - --unencrypted-http-transport
       - --http-address=0.0.0.0
+      - --beacon-nodes=http://${IP_ADDRESS}:5052
       - --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776
       - --metrics
       - --metrics-address=0.0.0.0
