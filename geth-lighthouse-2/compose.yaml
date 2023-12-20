@@ -77,7 +77,7 @@ services:
       - --metrics-allow-origin=*
       - --metrics-port=5054
       - --trusted-peers=16Uiu2HAm3TC5jLkMLsSvHeHbxwJKEueDznHNfq88PkPEtrRy4WtN
-      - --libp2p-addresses=/ip4/192.168.0.102/tcp/11000/p2p/16Uiu2HAm3TC5jLkMLsSvHeHbxwJKEueDznHNfq88PkPEtrRy4WtN
+      - --boot-nodes=/ip4/192.168.0.102/tcp/11000/p2p/16Uiu2HAm3TC5jLkMLsSvHeHbxwJKEueDznHNfq88PkPEtrRy4WtN
       - --enable-private-discovery=true
       - --target-peers=16
     volumes:
@@ -92,32 +92,32 @@ services:
       - execution
     restart: unless-stopped
 
-  validator:
-    image: sigp/lighthouse:v4.5.0
-    command:
-      - lighthouse
-      - validator_client
-      - --debug-level=info
-      - --testnet-dir=/el-cl-genesis-data/custom_config_data
-      - --validators-dir=/validator-keys/node-1-keystores/keys
-      - --secrets-dir=/validator-keys/node-1-keystores/secrets
-      - --init-slashing-protection
-      - --http
-      - --unencrypted-http-transport
-      - --http-address=0.0.0.0
-      - --http-port=5042
-      - --beacon-nodes=http://beacon:4000
-      - --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776
-      - --metrics
-      - --metrics-address=0.0.0.0
-      - --metrics-allow-origin=*
-      - --metrics-port=5064
-    volumes:
-      - ./el-cl-genesis-data:/el-cl-genesis-data
-      - ./validator-keys:/validator-keys
-    ports:
-      - "7242:5042"
-      - "7264:5064"
-    depends_on:
-      - beacon
-    restart: unless-stopped
+  # validator:
+  #   image: sigp/lighthouse:v4.5.0
+  #   command:
+  #     - lighthouse
+  #     - validator_client
+  #     - --debug-level=info
+  #     - --testnet-dir=/el-cl-genesis-data/custom_config_data
+  #     - --validators-dir=/validator-keys/node-1-keystores/keys
+  #     - --secrets-dir=/validator-keys/node-1-keystores/secrets
+  #     - --init-slashing-protection
+  #     - --http
+  #     - --unencrypted-http-transport
+  #     - --http-address=0.0.0.0
+  #     - --http-port=5042
+  #     - --beacon-nodes=http://beacon:4000
+  #     - --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776
+  #     - --metrics
+  #     - --metrics-address=0.0.0.0
+  #     - --metrics-allow-origin=*
+  #     - --metrics-port=5064
+  #   volumes:
+  #     - ./el-cl-genesis-data:/el-cl-genesis-data
+  #     - ./validator-keys:/validator-keys
+  #   ports:
+  #     - "7242:5042"
+  #     - "7264:5064"
+  #   depends_on:
+  #     - beacon
+  #   restart: unless-stopped

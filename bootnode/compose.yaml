@@ -13,6 +13,7 @@ services:
       - --http.vhosts=*
       - --http.corsdomain=*
       - --http.api=admin,engine,net,eth,web3,debug
+      - --http.port=8545
       - --ws
       - --ws.addr=0.0.0.0
       - --ws.port=8546
