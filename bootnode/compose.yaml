@@ -55,7 +55,6 @@ services:
       - --metrics
       - --metrics-address=0.0.0.0
       - --metrics-allow-origin=*
-      - --trusted-peers=${CL_TRUSTED_PEERS}
       - --boot-nodes=${CL_BOOTNODES}
     volumes:
       - ./consensus-data:/consensus-data 
