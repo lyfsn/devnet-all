@@ -4,7 +4,7 @@ services:
   execution:
     image: ethpandaops/geth:master-5b57727
     command:
-      - --networkid=38256
+      - --networkid=28256
       - --state.scheme=path
       - --verbosity=3
       - --datadir=/execution-data
@@ -15,11 +15,13 @@ services:
       - --http.api=admin,engine,net,eth,web3,debug
       - --ws
       - --ws.addr=0.0.0.0
+      - --ws.port=8546
       - --ws.api=admin,engine,net,eth,web3,debug
       - --ws.origins=*
       - --allow-insecure-unlock
       - --nat=extip:${IP_ADDRESS}
       - --verbosity=3
+      - --authrpc.port=8551
       - --authrpc.addr=0.0.0.0
       - --authrpc.vhosts=*
       - --authrpc.jwtsecret=/el-cl-genesis-data/jwt/jwtsecret
@@ -27,12 +29,20 @@ services:
       - --rpc.allow-unprotected-txs
       - --metrics
       - --metrics.addr=0.0.0.0
-      - --bootnodes=${EL_BOOTNODES}
+      - --metrics.port=9001
+      - --port=50303
+      - --discovery.port=50303
     volumes:
       - ./execution-data:/execution-data
       - ./el-cl-genesis-data:/el-cl-genesis-data
+    ports:
+      - "10545:8545" 
+      - "10546:8546" 
+      - "10551:8551" 
+      - "11001:9001" 
+      - "50303:50303/udp"
+      - "50303:50303/tcp"
     restart: unless-stopped
-    network_mode: host
 
   beacon:
     image: ethpandaops/lighthouse:proposer-signature-cache-c59fa34
@@ -42,10 +52,19 @@ services:
       - --debug-level=info
       - --datadir=/consensus-data
       - --testnet-dir=/el-cl-genesis-data/custom_config_data
+      - --disable-enr-auto-update
+      - --enr-address=${IP_ADDRESS}
+      - --enr-udp-port=11000
+      - --enr-tcp-port=11000
       - --listen-address=0.0.0.0
+      - --port=11000
       - --http
       - --http-address=0.0.0.0
-      - --execution-endpoints=http://${IP_ADDRESS}:8551
+      - --http-port=4000
+      - --http-allow-sync-stalled
+      - --slots-per-restore-point=32
+      - --disable-packet-filter
+      - --execution-endpoints=http://execution:8551
       - --jwt-secrets=/el-cl-genesis-data/jwt/jwtsecret
       - --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776
       - --subscribe-all-subnets
@@ -53,14 +72,21 @@ services:
       - --metrics
       - --metrics-address=0.0.0.0
       - --metrics-allow-origin=*
-      - --boot-nodes=${CL_BOOTNODES}
+      - --metrics-port=5054
+      - --enable-private-discovery=true
+      - --target-peers=16
     volumes:
       - ./consensus-data:/consensus-data 
       - ./el-cl-genesis-data:/el-cl-genesis-data
+    ports:
+      - "11000:11000/udp"
+      - "11000:11000/tcp"
+      - "11001:11001/udp"
+      - "4200:4000"
+      - "7054:5054"
     depends_on:
       - execution
     restart: unless-stopped
-    network_mode: host
 
   validator:
     image: ethpandaops/lighthouse:proposer-signature-cache-c59fa34
@@ -74,15 +100,19 @@ services:
       - --http
       - --unencrypted-http-transport
       - --http-address=0.0.0.0
-      - --beacon-nodes=http://${IP_ADDRESS}:5052
+      - --http-port=5042
+      - --beacon-nodes=http://beacon:4000
       - --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776
       - --metrics
       - --metrics-address=0.0.0.0
       - --metrics-allow-origin=*
+      - --metrics-port=5064
     volumes:
       - ./el-cl-genesis-data:/el-cl-genesis-data
       - ./validator_keys:/validator_keys
+    ports:
+      - "7042:5042"
+      - "7064:5064"
     depends_on:
       - beacon
     restart: unless-stopped
-    network_mode: host
