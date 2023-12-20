@@ -27,16 +27,10 @@ services:
       - --rpc.allow-unprotected-txs
       - --metrics
       - --metrics.addr=0.0.0.0
+      - --bootnodes=${EL_BOOTNODES}
     volumes:
       - ./execution-data:/execution-data
       - ./el-cl-genesis-data:/el-cl-genesis-data
-    # ports:
-    #   - "10545:8545" 
-    #   - "10546:8546" 
-    #   - "10551:8551" 
-    #   - "11001:9001" 
-    #   - "50303:50303/udp"
-    #   - "50303:50303/tcp"
     restart: unless-stopped
     network_mode: host
 
@@ -53,7 +47,7 @@ services:
       - --listen-address=0.0.0.0
       - --http
       - --http-address=0.0.0.0
-      - --execution-endpoints=http://execution:8551
+      - --execution-endpoints=http://127.0.0.1:8551
       - --jwt-secrets=/el-cl-genesis-data/jwt/jwtsecret
       - --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776
       - --subscribe-all-subnets
@@ -61,14 +55,11 @@ services:
       - --metrics
       - --metrics-address=0.0.0.0
       - --metrics-allow-origin=*
+      - --trusted-peers=${CL_TRUSTED_PEERS}
+      - --boot-nodes=${CL_BOOTNODES}
     volumes:
       - ./consensus-data:/consensus-data 
       - ./el-cl-genesis-data:/el-cl-genesis-data
-    # ports:
-    #   - "9000:9000/udp"
-    #   - "9000:9000/tcp"
-    #   - "4200:4000"
-    #   - "5254:5054"
     depends_on:
       - execution
     restart: unless-stopped
@@ -94,9 +85,6 @@ services:
     volumes:
       - ./el-cl-genesis-data:/el-cl-genesis-data
       - ./validator_keys:/validator_keys
-    # ports:
-    #   - "7062:5062"
-    #   - "7063:5063"
     depends_on:
       - beacon
     restart: unless-stopped
