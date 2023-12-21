@@ -73,7 +73,7 @@ docker run -d --name ${PREFIX}-beacon \
   --user root \
   sigp/lighthouse:v4.5.0 \
   lighthouse beacon_node \
-  --debug-level=info \
+  --debug-level=debug \
   --datadir=/consensus-data \
   --testnet-dir=/el-cl-genesis-data/custom_config_data \
   --listen-address=0.0.0.0 \
