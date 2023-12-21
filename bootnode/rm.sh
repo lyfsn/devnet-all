@@ -1,3 +1,11 @@
-docker compose -f compose.yaml rm
+
+
+
+export PREFIX=bootnode
+
+
+docker rm ${PREFIX}-execution
+docker rm ${PREFIX}-beacon
+docker rm ${PREFIX}-validator
 
 
