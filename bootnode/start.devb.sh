@@ -57,10 +57,10 @@ docker run -d --name ${PREFIX}-execution \
 
 docker run -d --name ${PREFIX}-beacon \
   -P \
-  -p 11000:11000/udp \
-  -p 11000:11000/tcp \
-  -p 11001:11001/udp \
-  -p 11001:11001/tcp \
+  -p 0.0.0.0:11000:11000/udp \
+  -p 0.0.0.0:11000:11000/tcp \
+  -p 0.0.0.0:11001:11001/udp \
+  -p 0.0.0.0:11001:11001/tcp \
   -p 4200:4000 \
   -p 7054:5054 \
   -v $(pwd)/consensus-data:/consensus-data \
