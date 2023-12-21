@@ -1,5 +1,5 @@
 /root/.cargo/bin/lighthouse bn \
-  --debug-level=info \
+  --debug-level=trace \
   --datadir=./consensus-data \
   --testnet-dir=./el-cl-genesis-data/custom_config_data \
   --listen-address=0.0.0.0 \
