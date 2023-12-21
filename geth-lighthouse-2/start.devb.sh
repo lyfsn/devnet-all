@@ -6,8 +6,8 @@ export IP_ADDRESS=78.46.91.61
 
 
 
-export EL_BOOTNODES="enode://13e6e9656db8581b921933270938948fe0b338e7d62c03b00aa2c9945a33224eadb1b310e5d66796ab7373f4504ba371e2c2b2cbcb4b98782210078d58b9f281@127.0.0.1:50303"
-export CL_BOOTNODES="enr:-MS4QG19zdU9xqDadvro8yRGzOD3mFIT-9KdH3NbWkheDmPoLs0aN1oIglXPUqGUN50aj3yEw3JdiFcB_D2Ed4E2ZBsBh2F0dG5ldHOIAAAAAAAAAACEZXRoMpDT1PoxQAAAOP__________gmlkgnY0gmlwhH8AAAGEcXVpY4Iq-YlzZWNwMjU2azGhAqtK-afWdyUaWiW5r4ewz0GT3MS-bDW_ek-P96pfLs5hiHN5bmNuZXRzAIN0Y3CCKviDdWRwgir4"
+export EL_BOOTNODES="enode://ab858f77cd051e7fa8d6eb0127b57ebd70aded47b3d2f6068da51d13ea0e2e58fadce24f743211bdb3e53234c8c8fea6aaab055db5ab5a0dd0193093557254a4@78.46.91.61:50303"
+export CL_BOOTNODES="enr:-MS4QPG8EMbUF28j29wKeQ1GIKfvuxTzweo4grk3A24vVJeqNRC-I2eEkF5aH4AcykkcmeQW7Ku3ihWQHK12wfJ3zAkBh2F0dG5ldHOIAAAAAAAAAACEZXRoMpDT1PoxQAAAOP__________gmlkgnY0gmlwhE4uWz2EcXVpY4Iq-YlzZWNwMjU2azGhAkChA3oFhPJDYjgDbbUG2IecOjC38OD0QavX7c_ijnt0iHN5bmNuZXRzAIN0Y3CCKviDdWRwgir4"
 
 
 
@@ -15,7 +15,7 @@ export PREFIX=geth-lighthouse-2
 
 
 
-docker run -d --name execution \
+docker run -d --name ${PREFIX}-execution \
   -P \
   -p 10745:8545 \
   -p 10746:8546 \
@@ -59,7 +59,7 @@ docker run -d --name execution \
   --bootnodes=${EL_BOOTNODES}
 
 
-docker run -d --name beacon \
+docker run -d --name ${PREFIX}-beacon \
   -P \
   -p 11200:11200/udp \
   -p 11200:11200/tcp \
@@ -70,7 +70,6 @@ docker run -d --name beacon \
   -v $(pwd)/el-cl-genesis-data:/el-cl-genesis-data \
   --restart unless-stopped \
   --user root \
-  --link execution:execution \
   sigp/lighthouse:v4.5.0 \
   lighthouse beacon_node \
   --debug-level=info \
@@ -88,7 +87,7 @@ docker run -d --name beacon \
   --http-allow-sync-stalled \
   --slots-per-restore-point=32 \
   --disable-packet-filter \
-  --execution-endpoints=http://execution:8551 \
+  --execution-endpoints=http://${IP_ADDRESS}:10751 \
   --jwt-secrets=/el-cl-genesis-data/jwt/jwtsecret \
   --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776 \
   --subscribe-all-subnets \
