@@ -82,9 +82,6 @@ docker run -d --name ${PREFIX}-beacon \
   --http \
   --http-address=0.0.0.0 \
   --http-port=4000 \
-  --http-allow-sync-stalled \
-  --slots-per-restore-point=32 \
-  --disable-packet-filter \
   --execution-endpoints=http://${IP_ADDRESS}:10751 \
   --jwt-secrets=/el-cl-genesis-data/jwt/jwtsecret \
   --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776 \
@@ -94,8 +91,7 @@ docker run -d --name ${PREFIX}-beacon \
   --metrics-address=0.0.0.0 \
   --metrics-allow-origin=* \
   --metrics-port=5054 \
-  --enable-private-discovery=true \
-  --target-peers=16 \
+  --disable-peer-scoring \
   --boot-nodes=${CL_BOOTNODES}
 
 

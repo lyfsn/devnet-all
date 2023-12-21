@@ -71,15 +71,13 @@ docker run -d --name ${PREFIX}-beacon \
   --debug-level=info \
   --datadir=/consensus-data \
   --testnet-dir=/el-cl-genesis-data/custom_config_data \
+  --self-limiter=blob_sidecars_by_range:256/10 \
   --listen-address=0.0.0.0 \
   --port=11000 \
   --quic-port=11001 \
   --http \
   --http-address=0.0.0.0 \
   --http-port=4000 \
-  --http-allow-sync-stalled \
-  --slots-per-restore-point=32 \
-  --disable-packet-filter \
   --execution-endpoints=http://${IP_ADDRESS}:10551 \
   --jwt-secrets=/el-cl-genesis-data/jwt/jwtsecret \
   --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776 \
@@ -89,32 +87,30 @@ docker run -d --name ${PREFIX}-beacon \
   --metrics-address=0.0.0.0 \
   --metrics-allow-origin="*" \
   --metrics-port=5054 \
-  --enable-private-discovery=true \
-  --target-peers=16
+  --disable-peer-scoring
 
-
-docker run -d --name ${PREFIX}-validator \
-  -p 7042:5042 \
-  -p 7064:5064 \
-  -v $(pwd)/el-cl-genesis-data:/el-cl-genesis-data \
-  -v $(pwd)/validator_keys:/validator_keys \
-  --restart unless-stopped \
-  ethpandaops/lighthouse:proposer-signature-cache-c59fa34 \
-  lighthouse validator_client \
-  --debug-level=info \
-  --testnet-dir=/el-cl-genesis-data/custom_config_data \
-  --validators-dir=/validator_keys \
-  --init-slashing-protection \
-  --http \
-  --unencrypted-http-transport \
-  --http-address=0.0.0.0 \
-  --http-port=5042 \
-  --beacon-nodes=http://${IP_ADDRESS}:4200 \
-  --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776 \
-  --metrics \
-  --metrics-address=0.0.0.0 \
-  --metrics-allow-origin=* \
-  --metrics-port=5064
+# docker run -d --name ${PREFIX}-validator \
+#   -p 7042:5042 \
+#   -p 7064:5064 \
+#   -v $(pwd)/el-cl-genesis-data:/el-cl-genesis-data \
+#   -v $(pwd)/validator_keys:/validator_keys \
+#   --restart unless-stopped \
+#   ethpandaops/lighthouse:proposer-signature-cache-c59fa34 \
+#   lighthouse validator_client \
+#   --debug-level=info \
+#   --testnet-dir=/el-cl-genesis-data/custom_config_data \
+#   --validators-dir=/validator_keys \
+#   --init-slashing-protection \
+#   --http \
+#   --unencrypted-http-transport \
+#   --http-address=0.0.0.0 \
+#   --http-port=5042 \
+#   --beacon-nodes=http://${IP_ADDRESS}:4200 \
+#   --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776 \
+#   --metrics \
+#   --metrics-address=0.0.0.0 \
+#   --metrics-allow-origin=* \
+#   --metrics-port=5064
 
 
 
