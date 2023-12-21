@@ -1,4 +1,4 @@
-lighthouse bn \
+/root/.cargo/bin/lighthouse bn \
   --debug-level=info \
   --datadir=./consensus-data \
   --testnet-dir=./el-cl-genesis-data/custom_config_data \
