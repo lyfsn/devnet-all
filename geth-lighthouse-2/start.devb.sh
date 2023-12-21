@@ -77,6 +77,7 @@ docker run -d --name ${PREFIX}-beacon \
   --datadir=/consensus-data \
   --testnet-dir=/el-cl-genesis-data/custom_config_data \
   --listen-address=0.0.0.0 \
+  --enr-address=${IP_ADDRESS} \
   --port=11200 \
   --quic-port=11201 \
   --http \
