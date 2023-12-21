@@ -71,7 +71,6 @@ docker run -d --name ${PREFIX}-beacon \
   --debug-level=info \
   --datadir=/consensus-data \
   --testnet-dir=/el-cl-genesis-data/custom_config_data \
-  --disable-enr-auto-update \
   --enr-address=${IP_ADDRESS} \
   --enr-udp-port=11000 \
   --enr-tcp-port=11000 \
