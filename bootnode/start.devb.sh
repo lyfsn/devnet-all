@@ -18,7 +18,7 @@ docker run -d --name ${PREFIX}-execution \
   -p 10545:8545 \
   -p 10546:8546 \
   -p 10551:8551 \
-  -p 11001:9001 \
+  -p 12001:9001 \
   -p 50303:50303/udp \
   -p 50303:50303/tcp \
   -v $(pwd)/execution-data:/execution-data \
