@@ -2,9 +2,6 @@
   --debug-level=info \
   --datadir=./consensus-data \
   --testnet-dir=./el-cl-genesis-data/custom_config_data \
-  --enr-address=78.46.91.61 \
-  --enr-udp-port=11031 \
-  --enr-tcp-port=11031 \
   --listen-address=0.0.0.0 \
   --port=11031 \
   --http \
