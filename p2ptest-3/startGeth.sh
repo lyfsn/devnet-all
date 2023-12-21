@@ -1,0 +1,32 @@
+
+./geth \
+ --networkid=28256 \
+ --state.scheme=path \
+ --verbosity=3 \
+ --datadir=./execution-data \
+ --http \
+ --http.addr=0.0.0.0 \
+ --http.vhosts=* \
+ --http.corsdomain=* \
+ --http.api=admin,engine,net,eth,web3,debug \
+ --http.port=8565 \
+ --ws \
+ --ws.addr=0.0.0.0 \
+ --ws.port=8566 \
+ --ws.api=admin,engine,net,eth,web3,debug \
+ --ws.origins=* \
+ --allow-insecure-unlock \
+ --nat=extip:127.0.0.1 \
+ --verbosity=3 \
+ --authrpc.port=8572 \
+ --authrpc.addr=0.0.0.0 \
+ --authrpc.vhosts=* \
+ --authrpc.jwtsecret=./el-cl-genesis-data/jwt/jwtsecret \
+ --syncmode=full \
+ --rpc.allow-unprotected-txs \
+ --metrics \
+ --metrics.addr=0.0.0.0 \
+ --metrics.port=9102 \
+ --port=50305 \
+ --discovery.port=50305 \
+ --bootnodes=enode://1213f07079ec190b58f234ca5450c1bcb39e7cc3083f30ed3f98ef0f000b39ea6e423f870943493c0ff5d0c136565dcbdfcd278c9c83cac76d6d7594017050bc@127.0.0.1:50303

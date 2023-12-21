@@ -79,6 +79,7 @@ docker run -d --name ${PREFIX}-beacon \
   --enr-address=${IP_ADDRESS} \
   --enr-udp-port=11200 \
   --enr-tcp-port=11200 \
+  --enr-quic-port=11201 \
   --listen-address=0.0.0.0 \
   --port=11200 \
   --http \

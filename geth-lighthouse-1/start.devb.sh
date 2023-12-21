@@ -84,10 +84,11 @@ docker run -d --name ${PREFIX}-beacon \
   --testnet-dir=/el-cl-genesis-data/custom_config_data \
   --disable-enr-auto-update \
   --enr-address=${IP_ADDRESS} \
-  --enr-udp-port=11000 \
-  --enr-tcp-port=11000 \
+  --enr-udp-port=11100 \
+  --enr-tcp-port=11100 \
+  --enr-quic-port=11101 \
   --listen-address=0.0.0.0 \
-  --port=11000 \
+  --port=11100 \
   --http \
   --http-address=0.0.0.0 \
   --http-port=4000 \
