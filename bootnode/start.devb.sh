@@ -82,7 +82,7 @@ docker run -d --name ${PREFIX}-beacon \
   --http-allow-sync-stalled \
   --slots-per-restore-point=32 \
   --disable-packet-filter \
-  --execution-endpoints=http://${PREFIX}-execution:8551 \
+  --execution-endpoints=http://${IP_ADDRESS}:10551 \
   --jwt-secrets=/el-cl-genesis-data/jwt/jwtsecret \
   --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776 \
   --subscribe-all-subnets \
@@ -111,7 +111,7 @@ docker run -d --name ${PREFIX}-validator \
   --unencrypted-http-transport \
   --http-address=0.0.0.0 \
   --http-port=5042 \
-  --beacon-nodes=http://${PREFIX}-beacon:4000 \
+  --beacon-nodes=http://${IP_ADDRESS}:4200 \
   --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776 \
   --metrics \
   --metrics-address=0.0.0.0 \
