@@ -15,7 +15,7 @@
  --ws.api=admin,engine,net,eth,web3,debug \
  --ws.origins=* \
  --allow-insecure-unlock \
- --nat=extip:127.0.0.1 \
+ --nat=extip:78.46.91.61 \
  --verbosity=3 \
  --authrpc.port=8551 \
  --authrpc.addr=0.0.0.0 \
