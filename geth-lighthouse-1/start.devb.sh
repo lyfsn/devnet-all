@@ -77,7 +77,6 @@ docker run -d --name ${PREFIX}-beacon \
   -v $(pwd)/el-cl-genesis-data:/el-cl-genesis-data \
   --restart unless-stopped \
   --user root \
-  --link ${PREFIX}-execution:execution \
   sigp/lighthouse:v4.5.0 \
   lighthouse beacon_node \
   --debug-level=info \
@@ -89,8 +88,7 @@ docker run -d --name ${PREFIX}-beacon \
   --http \
   --http-address=0.0.0.0 \
   --http-port=4000 \
-  --self-limiter=blob_sidecars_by_range:256/10 \
-  --execution-endpoints=http://execution:8551 \
+  --execution-endpoints=http://${IP_ADDRESS}:10651 \
   --jwt-secrets=/el-cl-genesis-data/jwt/jwtsecret \
   --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776 \
   --subscribe-all-subnets \
