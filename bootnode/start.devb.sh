@@ -66,12 +66,11 @@ docker run -d --name ${PREFIX}-beacon \
   -v $(pwd)/consensus-data:/consensus-data \
   -v $(pwd)/el-cl-genesis-data:/el-cl-genesis-data \
   --restart unless-stopped \
-  ethpandaops/lighthouse:proposer-signature-cache-c59fa34 \
+  sigp/lighthouse:v4.5.0 \
   lighthouse beacon_node \
   --debug-level=info \
   --datadir=/consensus-data \
   --testnet-dir=/el-cl-genesis-data/custom_config_data \
-  --self-limiter=blob_sidecars_by_range:256/10 \
   --listen-address=0.0.0.0 \
   --port=11000 \
   --quic-port=11001 \
