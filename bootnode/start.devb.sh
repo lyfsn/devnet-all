@@ -78,6 +78,7 @@ docker run -d --name ${PREFIX}-beacon \
   --enr-quic-port=11001 \
   --listen-address=0.0.0.0 \
   --port=11000 \
+  --quic-port=11001 \
   --http \
   --http-address=0.0.0.0 \
   --http-port=4000 \
