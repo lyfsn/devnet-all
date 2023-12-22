@@ -21,4 +21,5 @@
   --metrics-port=5164 \
   --enable-private-discovery=true \
   --target-peers=16 \
-  --boot-nodes=enr:-L24QI2N1B7yUG0nCSKaSEW7yEx7oyF0nHkgcgpgIUrLo05SJkihifuNOs23A6p07XKCjdMF1G9NzVLCNabgss7Pu00Ch2F0dG5ldHOIAAAAAAAAAACEZXRoMpDT1PoxQAAAOP__________gmlkgnY0gmlwhKh3BVKEcXVpY4Iq-YlzZWNwMjU2azGhAyXOfXgViKoRH61Uk46IH6eX1nekut4SDVJtPYfbL9c9iHN5bmNuZXRzAIN0Y3CCKvg
+  --boot-nodes=enr:-L24QI2N1B7yUG0nCSKaSEW7yEx7oyF0nHkgcgpgIUrLo05SJkihifuNOs23A6p07XKCjdMF1G9NzVLCNabgss7Pu00Ch2F0dG5ldHOIAAAAAAAAAACEZXRoMpDT1PoxQAAAOP__________gmlkgnY0gmlwhKh3BVKEcXVpY4Iq-YlzZWNwMjU2azGhAyXOfXgViKoRH61Uk46IH6eX1nekut4SDVJtPYfbL9c9iHN5bmNuZXRzAIN0Y3CCKvg \
+  --enr-address=78.46.91.61
