@@ -20,4 +20,5 @@
   --metrics-allow-origin=* \
   --metrics-port=5054 \
   --enable-private-discovery=true \
-  --target-peers=16
+  --target-peers=16 \
+  --enr-address=168.119.5.82
