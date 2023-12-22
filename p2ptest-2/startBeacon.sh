@@ -21,4 +21,4 @@
   --metrics-port=5164 \
   --enable-private-discovery=true \
   --target-peers=16 \
-  --boot-nodes=enr:-MS4QK4Ff4dm3J5iAzZa1rv1qPTKERa2mn-oQq1hxNt-XIHyB80BsL0ehcAD25r5TC23ODCacGKMmKveCJQJfE1wQ6wBh2F0dG5ldHOIAAAAAAAAAACEZXRoMpDT1PoxQAAAOP__________gmlkgnY0gmlwhH8AAAGEcXVpY4Iq-YlzZWNwMjU2azGhA7NXmsWFTPUSKxP_xRixMCEEqvsBHWd1SsRnoSUX5Op9iHN5bmNuZXRzAIN0Y3CCKviDdWRwgir4
+  --boot-nodes=enr:-LW4QI0Be6a0ELTXagGbdDELovP7XNpiYhM9_0yGi2pWCfwoMKQhELayRqnfmJeMWRj7afOoczn0POHLt7eElRdSqUABh2F0dG5ldHOIAAAAAAAAAACEZXRoMpDT1PoxQAAAOP__________gmlkgnY0hHF1aWOCKvmJc2VjcDI1NmsxoQMlzn14FYiqER-tVJOOiB-nl9Z3pLreEg1SbT2H2y_XPYhzeW5jbmV0cwCDdGNwgir4
