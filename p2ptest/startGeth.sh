@@ -1,6 +1,6 @@
 
 ./geth \
- --networkid=28256 \
+ --networkid=38356 \
  --state.scheme=path \
  --verbosity=3 \
  --datadir=./execution-data \
