@@ -20,7 +20,7 @@
   --disable-peer-scoring \
   --boot-nodes=enr:-Le4QGWdPUgA6CqaS0KMGPglLjhnqB6MJ7ZDtXTZmzEp-EbybuBwKvuk_619S_1yUt4iweZHSapcz6rxk8XIDDq_baeCAeiHYXR0bmV0c4gAAAAAAAAAAIRldGgykNPU-jFAAAA4__________-CaWSCdjSEcXVpY4IjKYlzZWNwMjU2azGhA1RnFOwLma7Z8MZBl7aOTlVTK1wwrUSt8wYYzbty9rebiHN5bmNuZXRzAIN0Y3CCIyg \
   --quic-port=9001 \
-  --enr-quic-port=9001
-  # --enr-address=78.46.91.61  \
-  # --enr-udp-port=9000 \
+  --enr-quic-port=9001 \
+  --enr-address=78.46.91.61  \
+  --enr-udp-port=9000 \
 
