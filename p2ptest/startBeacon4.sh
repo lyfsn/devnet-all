@@ -18,6 +18,8 @@
   --metrics-allow-origin=* \
   --target-peers=16 \
   --disable-peer-scoring \
+  --quic-port=9001 \
+  --enr-quic-port=9001
   # --enr-address=149.28.48.224 \
   # --enr-udp-port=9000 \
 
