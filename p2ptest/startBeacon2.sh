@@ -21,7 +21,7 @@
   --metrics-port=5054 \
   --enable-private-discovery=true \
   --target-peers=16 \
-  --enr-address=140.82.7.76 \
+  --enr-address=149.28.48.224 \
   --disable-peer-scoring \
   --enr-udp-port=11001 \
   --enr-tcp-port=11001 \

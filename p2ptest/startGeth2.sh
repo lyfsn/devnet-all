@@ -27,4 +27,4 @@
  --metrics.port=9001 \
  --port=50303 \
  --discovery.port=50303 \
- --nat=extip:140.82.7.76
+ --nat=extip:149.28.48.224
