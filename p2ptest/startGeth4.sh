@@ -22,3 +22,4 @@
  --rpc.allow-unprotected-txs \
  --metrics \
  --metrics.addr=0.0.0.0 \
+ --nat=extip:149.28.48.224
