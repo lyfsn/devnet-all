@@ -18,4 +18,4 @@
   --metrics-allow-origin=* \
   --target-peers=16 \
   --disable-peer-scoring \
-  
+  --boot-nodes=enr:-La4QF5Vc1j5_HWyzCa3CErDg_4ZM1QxWYgKOYyWSS7gQxBKPOAUpvZa3KgopBgWLEdHYOSSxDsHpIZQQ4e2GL3D762B0YdhdHRuZXRziAAAAAAAAAAAhGV0aDKQ09T6MUAAADj__________4JpZIJ2NIRxdWljgiMpiXNlY3AyNTZrMaEDVGcU7AuZrtnwxkGXto5OVVMrXDCtRK3zBhjNu3L2t5uIc3luY25ldHMAg3RjcIIjKA
