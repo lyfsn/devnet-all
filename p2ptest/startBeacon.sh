@@ -23,6 +23,6 @@
   --target-peers=16 \
   --enr-address=127.0.0.1  \
   --disable-peer-scoring \
-  --enr-udp-port=11001 \
-  --enr-tcp-port=11001 \
+  --enr-udp-port=11000 \
+  --enr-tcp-port=11000 \
   

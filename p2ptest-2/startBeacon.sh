@@ -24,6 +24,6 @@
   --boot-nodes=enr:-MS4QIJEVR4oQhwu8acaVhMA4EPbXK_dEUHlpd_A90NdlH-4acyWn_yAwc6jAQtvQPr0kCyhtW6iYit1IFyC_0Kb9pEBh2F0dG5ldHOIAAAAAAAAAACEZXRoMpDT1PoxQAAAOP__________gmlkgnY0gmlwhH8AAAGEcXVpY4Iq-YlzZWNwMjU2azGhAsJm92CYcaHldTJM5guxl9dfM2GFWkjG4dFth8ObVkkBiHN5bmNuZXRzAIN0Y3CCKvmDdWRwgir5 \
   --enr-address=127.0.0.1  \
   --disable-peer-scoring \
-  --enr-udp-port=11012 \
-  --enr-tcp-port=11012 \
+  --enr-udp-port=11011 \
+  --enr-tcp-port=11011 \
 
