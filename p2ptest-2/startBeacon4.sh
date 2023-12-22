@@ -18,7 +18,7 @@
   --metrics-allow-origin=* \
   --target-peers=16 \
   --disable-peer-scoring \
-  --boot-nodes=enr:-Le4QGWdPUgA6CqaS0KMGPglLjhnqB6MJ7ZDtXTZmzEp-EbybuBwKvuk_619S_1yUt4iweZHSapcz6rxk8XIDDq_baeCAeiHYXR0bmV0c4gAAAAAAAAAAIRldGgykNPU-jFAAAA4__________-CaWSCdjSEcXVpY4IjKYlzZWNwMjU2azGhA1RnFOwLma7Z8MZBl7aOTlVTK1wwrUSt8wYYzbty9rebiHN5bmNuZXRzAIN0Y3CCIyg \
+  --boot-nodes=enr:-Ma4QDxSvZMU3oReHv1i_0qq-fv9Ltm0I_5KRjPxcNQLkkdrREblO7si4iPJW17p_3CWP3LYG_GzPOHd_cUQDGzV_VOCAemHYXR0bmV0c4gAAAAAAAAAAIRldGgykNPU-jFAAAA4__________-CaWSCdjSCaXCElRww4IRxdWljgiMpiXNlY3AyNTZrMaEDVGcU7AuZrtnwxkGXto5OVVMrXDCtRK3zBhjNu3L2t5uIc3luY25ldHMAg3RjcIIjKIN1ZHCCIyg \
   --quic-port=9001 \
   --enr-quic-port=9001 \
   --enr-address=78.46.91.61  \
