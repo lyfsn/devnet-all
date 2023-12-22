@@ -22,7 +22,7 @@
   --enable-private-discovery=true \
   --target-peers=16 \
   --boot-nodes=enr:-L24QPk7u-tKTBEWK1UlcRQvUX0hg-d4Dc2NloPlKQhZ1RG0Rg827ikdygKaLU5hrT4kIvmTVd0pHFvR-BcmEWVqH4hHh2F0dG5ldHOIAAAAAAAAAACEZXRoMpDT1PoxQAAAOP__________gmlkgnY0gmlwhKh3BVKEcXVpY4Iq-YlzZWNwMjU2azGhAyXOfXgViKoRH61Uk46IH6eX1nekut4SDVJtPYfbL9c9iHN5bmNuZXRzAIN0Y3CCKvg \
-  --enr-address=78.46.91.61 \
+  --enr-address=78.46.91.61  \
   --disable-peer-scoring \
   --enr-udp-port=11012 \
   --enr-tcp-port=11012 \
