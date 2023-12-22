@@ -27,4 +27,3 @@
  --metrics.port=9001 \
  --port=50303 \
  --discovery.port=50303 \
- --nat=extip:127.0.0.1
