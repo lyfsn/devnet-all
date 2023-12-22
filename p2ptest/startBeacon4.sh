@@ -19,5 +19,6 @@
   --target-peers=16 \
   --disable-peer-scoring \
   --enr-address=149.28.48.224 \
+  --enr-udp-port=9001 \
 
   

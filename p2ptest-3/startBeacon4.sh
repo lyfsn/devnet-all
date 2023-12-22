@@ -20,5 +20,7 @@
   --disable-peer-scoring \
   --boot-nodes=enr:-L64QJWABGydf9yatw5YiNn-wf3kaUBHWoVwz4j5kip1_vuaaySjs6DSdRxXg-yUUdKn1YzPYDFZnI1aBMuQo7rjT7qB0odhdHRuZXRziAAAAAAAAAAAhGV0aDKQ09T6MUAAADj__________4JpZIJ2NIJpcISVHDDghHF1aWOCIymJc2VjcDI1NmsxoQNUZxTsC5mu2fDGQZe2jk5VUytcMK1ErfMGGM27cva3m4hzeW5jbmV0cwCDdGNwgiMo \
   --enr-address=168.119.5.82  \
+  --enr-udp-port=9001 \
+
 
   
