@@ -22,4 +22,7 @@
   --enable-private-discovery=true \
   --target-peers=16 \
   --enr-address=168.119.5.82 \
-  --disable-peer-scoring
+  --disable-peer-scoring \
+  --enr-udp-port=11001 \
+  --enr-tcp-port=11001 \
+  
