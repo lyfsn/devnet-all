@@ -21,7 +21,7 @@
   --metrics-port=5164 \
   --enable-private-discovery=true \
   --target-peers=16 \
-  --boot-nodes=enr:-MS4QDB8fJC6q1t0mUD9hdAExwdqC_M3nwjoRpMOOE6DR8traY0f5uc8DPXFL96NAjYFI8JoMoEcGNa_waWm3RxizS8Ch2F0dG5ldHOIAAAAAAAAAACEZXRoMpDT1PoxQAAAOP__________gmlkgnY0gmlwhJUcMOCEcXVpY4Iq-YlzZWNwMjU2azGhA1RnFOwLma7Z8MZBl7aOTlVTK1wwrUSt8wYYzbty9rebiHN5bmNuZXRzAIN0Y3CCKvmDdWRwgir5 \
+  --boot-nodes=enr:-MS4QObZYBH-C4kVVpamxdsZkuX7n7zvua37KaI-DsJCWWQ4PFJdzK9rDyq0_QcCeqiIUwFpawloct38S_D4Mn2yIIBHh2F0dG5ldHOIAAAAAAAAAACEZXRoMpDT1PoxQAAAOP__________gmlkgnY0gmlwhH8AAAGEcXVpY4Iq-YlzZWNwMjU2azGhA1RnFOwLma7Z8MZBl7aOTlVTK1wwrUSt8wYYzbty9rebiHN5bmNuZXRzAIN0Y3CCKvmDdWRwgir5 \
   --enr-address=127.0.0.1 \
   --disable-peer-scoring \
   --enr-udp-port=11012 \
