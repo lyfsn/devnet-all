@@ -21,7 +21,7 @@
   --metrics-port=5184 \
   --enable-private-discovery=true \
   --target-peers=16 \
-  --boot-nodes=enr:-L24QPk7u-tKTBEWK1UlcRQvUX0hg-d4Dc2NloPlKQhZ1RG0Rg827ikdygKaLU5hrT4kIvmTVd0pHFvR-BcmEWVqH4hHh2F0dG5ldHOIAAAAAAAAAACEZXRoMpDT1PoxQAAAOP__________gmlkgnY0gmlwhKh3BVKEcXVpY4Iq-YlzZWNwMjU2azGhAyXOfXgViKoRH61Uk46IH6eX1nekut4SDVJtPYfbL9c9iHN5bmNuZXRzAIN0Y3CCKvgenr:-MS4QDB8fJC6q1t0mUD9hdAExwdqC_M3nwjoRpMOOE6DR8traY0f5uc8DPXFL96NAjYFI8JoMoEcGNa_waWm3RxizS8Ch2F0dG5ldHOIAAAAAAAAAACEZXRoMpDT1PoxQAAAOP__________gmlkgnY0gmlwhJUcMOCEcXVpY4Iq-YlzZWNwMjU2azGhA1RnFOwLma7Z8MZBl7aOTlVTK1wwrUSt8wYYzbty9rebiHN5bmNuZXRzAIN0Y3CCKvmDdWRwgir5 \
+  --boot-nodes=enr:-MS4QDB8fJC6q1t0mUD9hdAExwdqC_M3nwjoRpMOOE6DR8traY0f5uc8DPXFL96NAjYFI8JoMoEcGNa_waWm3RxizS8Ch2F0dG5ldHOIAAAAAAAAAACEZXRoMpDT1PoxQAAAOP__________gmlkgnY0gmlwhJUcMOCEcXVpY4Iq-YlzZWNwMjU2azGhA1RnFOwLma7Z8MZBl7aOTlVTK1wwrUSt8wYYzbty9rebiHN5bmNuZXRzAIN0Y3CCKvmDdWRwgir5 \
   --enr-address=149.28.48.224 \
   --disable-peer-scoring \
   --enr-udp-port=11032 \
